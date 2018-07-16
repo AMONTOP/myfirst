@@ -1,0 +1,54 @@
+<!--pages/setting/form/form.wxml-->
+<form bindsubmit='formSubmit' bindreset='formReset'>
+  <view class='form-container'>
+    <text>form</text>
+    <view class='category-item'>
+      <text class='detail-item'>switch开关</text>
+      <switch name='switch' checked='{{true}}'></switch>
+    </view>
+     <view class='category-item'>
+      <text class='detail-item'>slider</text>
+      <slider name='slider' valud="40" max="100" step="20"></slider>
+    </view>
+     <view class='category-item'>
+      <text class='detail-item'>input</text>
+      <input name='input' placeholder='请输入内容....'></input>
+    </view>
+     <view class='category-item'>
+      <text class='detail-item'>radio</text>
+      <radio-group name="radio" bindchange="radioChange">
+        <label>
+          <radio value='男' checked='{{true}}'></radio>男
+        </label>
+        <label>
+          <radio value='女' checked='{{true}}'></radio>女
+        </label>
+      </radio-group>
+    </view>
+     <view class='category-item'>
+      <text class='detail-item'>checkbox</text>
+      <checkbox-group name="checkbox" bindchange="checkboxChange">
+        <label>
+          <checkbox value='游泳'></checkbox>游泳
+        </label>
+        <label>
+          <checkbox value='唱歌'></checkbox>唱歌
+        </label>
+        <label>
+          <checkbox value='跳舞' checked='{{true}}'></checkbox>跳舞
+        </label>
+      </checkbox-group>
+    </view>
+
+     <view class='category-item'>
+      <text class='detail-item'>滚动选择器</text>
+      <picker name="picker" mode="date" value='{{date}}' start="2015-09-01" end="2020-09-01" bindchange="bindDateChange">
+      <view class='detail-item'>
+        当前选择:{{date}}
+      </view>
+      </picker>
+    </view>
+    <button form-type='submit'>Submit</button>
+    <button form-type='reset'>Reset</button>
+  </view>
+</form>
